@@ -1,4 +1,5 @@
 package inline_function
+
 // basic
 inline fun doTask(action: ()-> Unit){
     action()

@@ -10,37 +10,65 @@ class Person{
         println("Name: $name | age: $age | Gender: $gender")
     }
 }
-// Sample Class Object
 class Student{
+    private var _id : Int? = null
     private var _name : String = ""
-    private var _score : Double = 0.0
+    private var _gender : String = ""
+    private var _score: Double = 0.0
+    private var _gpa: Double = 0.0
 
-    var name : String
-        get() = _name
+    var id: Int
+        get() = _id!!
+        set(id) {
+            _id = id
+        }
 
-        set(name){
+    var name: String
+         get() = _name
+        set(name) {
             _name = name
         }
 
-    var score : Double
-        get() = _score
-        set(score){
-            _score = score
-        }
-    fun displayStudent(){
-        println("Name: $name | score: $_score")
+    var gender : String
+    get() = _gender
+    set(gender) {
+        _gender = gender
     }
-}
 
+    var score: Double
+    get() = _score
+    set(score) {
+        _score = score
+    }
+
+    var gpa: Double
+    get() = _gpa
+    set(gpa) {
+        _gpa = gpa
+    }
+
+    // method member
+//    fun displayStudent(){
+//        println("ID: $_id | Name: $_name | Gender: $_gender | Score: ${"%.2f".format(score)}" +
+//                "| GPA: ${"%.2f".format(gpa)}")
+//    }
+}
 
 fun main(){
     // Object from class Person
     val p = Person()
     p.displayPerson()
 
+    // object from class student
     val stu = Student()
+//    stu.id = 1;
     stu.name = "Dara"
-    stu.score = 10.0
+    stu.gender = "Male"
+    stu.score = 90.0;
+    stu.gpa = 3.80
+    println("ID: ${stu.id} | Name: ${stu.name} | Gender: ${stu.gender} | Score: ${"%.2f".format(stu.score)}" +
+                "| GPA: ${"%.2f".format(stu.gpa)}")
 
-    stu.displayStudent()
+//    stu.displayStudent()
+
 }
